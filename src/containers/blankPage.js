@@ -7,7 +7,7 @@ export default class extends Component {
     return (
       <LayoutContentWrapper style={{ height: '100vh' }}>
         <LayoutContent>
-          <h1>Blank Page</h1>
+          <h1>Blank Page kjjhfksjdhg</h1>
         </LayoutContent>
       </LayoutContentWrapper>
     );

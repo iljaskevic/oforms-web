@@ -3,9 +3,9 @@ export default {
 };
 
 const siteConfig = {
-  siteName: 'ISOMORPHIC',
+  siteName: 'oForms',
   siteIcon: 'ion-flash',
-  footerText: 'Isomorphic ©2018 Created by RedQ, Inc',
+  footerText: 'oForms ©2018',
 };
 const themeConfig = {
   topbar: 'themedefault',
