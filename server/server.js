@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import jsonwebtoken from 'jsonwebtoken';
 import cors from 'cors';
+import path from 'path'
 import Config from './config';
 import { authenticate, authError } from './middleware';
 
@@ -24,6 +25,9 @@ app
 	.use(bodyParser.urlencoded({ extended: true }))
 	.use(bodyParser.json())
 	.use(cors());
+
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '../build')));
 
 app.get('/', (req, res) => {
 	res.json({ status: 'OK' });
