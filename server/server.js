@@ -2,8 +2,10 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import jsonwebtoken from 'jsonwebtoken';
 import cors from 'cors';
-import path from 'path'
+import path from 'path';
+import jwtAuthz from 'express-jwt-authz';
 import Config from './config';
+import { authJwtCheck } from './middleware/auth0'
 import { authenticate, authError } from './middleware';
 
 const { port, secretKey, expiredAfter } = Config;
@@ -31,6 +33,11 @@ app.use(express.static(path.join(__dirname, '../build')));
 
 app.get('/', (req, res) => {
 	res.json({ status: 'OK' });
+});
+
+app.get('/api/test', authJwtCheck/* , jwtAuthz(['batch:upload'])*/, (req, res) => {
+	// res.json({ status: 'OK' });
+	res.status(201).send({message: "This is the GET /api/test endpoint"});
 });
 
 app.post('/api/login', (req, res) => {

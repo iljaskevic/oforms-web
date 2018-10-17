@@ -1,4 +1,4 @@
-const port = 9000;
+const port = process.env.PORT || 9000;
 const secretKey = 'secretKey';
 const expiredAfter = 60 * 60 * 1000;
 
