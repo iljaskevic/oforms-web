@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Input from '../../components/uielements/input';
-import Checkbox from '../../components/uielements/checkbox';
-import Button from '../../components/uielements/button';
+// import Input from '../../components/uielements/input';
+// import Checkbox from '../../components/uielements/checkbox';
+// import Button from '../../components/uielements/button';
 import authAction from '../../redux/auth/actions';
 import IntlMessages from '../../components/utility/intlMessages';
 import SignInStyleWrapper from './homePage.style';
@@ -22,14 +22,14 @@ class HomePage extends Component {
       this.setState({ redirectToReferrer: true });
     }
   }
-  handleLogin = () => {
-    const { login, history } = this.props;
-    const userInfo = {
-      username: document.getElementById('inputUserName').value || '',
-      password: document.getElementById('inpuPassword').value || '',
-    };
-    login({ history, userInfo });
-  };
+  // handleLogin = () => {
+  //   const { login, history } = this.props;
+  //   const userInfo = {
+  //     username: document.getElementById('inputUserName').value || '',
+  //     password: document.getElementById('inpuPassword').value || '',
+  //   };
+  //   login({ history, userInfo });
+  // };
   render() {
     const from = { pathname: '/dashboard' };
     const { redirectToReferrer } = this.state;
